@@ -1,9 +1,9 @@
 <script setup>
-import TheWelcome from '../components/TheWelcome.vue'
+import seeCoffees from '@/botoes/seeCoffees.vue';
 </script>
 
 <template>
   <main>
-    <TheWelcome />
+    <seeCoffees/>
   </main>
 </template>
