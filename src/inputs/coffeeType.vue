@@ -24,15 +24,18 @@ const cf = ref('')
 label{
     color: #6F4E37;
     font-weight: bold;
+    font-size: 20px;
 }
 
 select{
+
     background-color: #fff8ed;
     border: rgb(111, 78, 55, 0.500) 2.5px solid;
     border-radius: 5px;
     padding: 8px 15px;
     width: 100%;
     color: #6F4E37;
+    font-size: 15px;
 }
 select:focus {
     border-color: rgb(111, 78, 55, 0.750);
