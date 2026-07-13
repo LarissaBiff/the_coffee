@@ -1,7 +1,7 @@
 <script setup>
 import { cafes } from '@/data/coffes';
 
-const quantos = cafes.length;
+const quantos_avaliados = cafes.filter(cafe => cafe.avaliado).length
 </script>
 
 <template>
@@ -14,7 +14,7 @@ const quantos = cafes.length;
             <h3>
             Recorded Reviwes:
             </h3>
-            <p>3</p>
+            <p>{{ quantos_avaliados }}</p>
         </div>
     </div>
 
@@ -22,7 +22,7 @@ const quantos = cafes.length;
 
 <style scoped>
 .all-part{
-    width: 25%;
+    width: 300px;
     color: rgb(111, 78, 55);
     border: solid rgb(111, 78, 55, 0.500) 2px;
     background-color: #fff8ed;

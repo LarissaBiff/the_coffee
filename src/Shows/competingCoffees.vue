@@ -22,7 +22,7 @@ const quantos = cafes.length;
 
 <style scoped>
 .all-part{
-    width: 25%;
+    width: 300px;
     color: rgb(111, 78, 55);
     border: solid rgb(111, 78, 55, 0.500) 2px;
     background-color: #fff8ed;
