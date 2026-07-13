@@ -1,9 +1,7 @@
 @import './base.css';
 
 #app {
-  min-height: 100vh;
-  margin: 0 auto;
-  padding: 2rem;
+  width: 100%;
   font-weight: normal;
 }
 
@@ -13,3 +11,21 @@ a,
   transition: 0.4s;
   padding: 3px;
 }
+
+@media (hover: hover) {
+  a:hover {
+    cursor: pointer;
+  }
+}
+
+@media (min-width: 1024px) {
+  body {
+    margin: 0;
+    padding: 0;
+  }
+
+  #app {
+    padding: 0;
+  }
+}
+
