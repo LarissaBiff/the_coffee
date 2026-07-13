@@ -1,0 +1,29 @@
+<script setup>
+const total = 0;
+</script>
+
+<template>
+    <div>
+        <p>Current Average</p> <p class="number">{{ total }}</p>
+    </div>
+</template>
+
+<style scoped>
+div{
+    color: #412d20;
+    background-color: #fff8ed;
+    border: solid rgb(111, 78, 55, 0.500) 2px;
+    padding: 1.2vw;
+    border-radius: 10px;
+    width: 200px;
+    display: flex;
+    align-items: center;
+    gap: 2vw;
+}
+p{
+    font-weight: bolder;
+}
+.number{
+    font-size: 2vw;
+}
+</style>
