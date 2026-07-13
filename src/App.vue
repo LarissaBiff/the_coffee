@@ -31,4 +31,11 @@ body,
 main {
   flex: 1;
 }
+</script>
+
+<template>
+  <RouterView />
+</template>
+
+<style scoped>
 </style>
