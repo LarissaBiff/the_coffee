@@ -2,6 +2,7 @@
 import aGrade from '@/inputs/aGrade.vue';
 import coffeeType from '@/inputs/coffeeType.vue';
 import rankingStructure from '@/Shows/rankingStructure.vue';
+import competingCoffees from '@/Shows/competingCoffees.vue';
 </script>
 
 <template>
@@ -9,5 +10,6 @@ import rankingStructure from '@/Shows/rankingStructure.vue';
     <aGrade/>
     <coffee-type/>
     <ranking-structure/>
+    <competing-coffees/>
   </main>
 </template>
