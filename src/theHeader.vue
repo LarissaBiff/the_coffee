@@ -31,6 +31,7 @@ header {
   left: 0;
   top: 0;
   background-color: #6F4E37;
+  border-bottom: #3d2b1e solid 5px;
 }
 .menu{
     flex-wrap: wrap;

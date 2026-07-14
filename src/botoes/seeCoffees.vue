@@ -1,9 +1,14 @@
 <script setup>
+import router from '@/router';
 
+
+function abrirCafes() {
+  router.push('/cafes')
+}
 </script>
 
 <template>
-    <button href="#">
+    <button @click="abrirCafes">
       <font-awesome-icon icon="fa-solid fa-mug-hot" style="font-size: 20px;" />
       Ver Cafés
     </button>
