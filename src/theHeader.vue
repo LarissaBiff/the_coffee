@@ -26,7 +26,7 @@ import { RouterLink } from 'vue-router';
 
 <style scoped>
 header {
-  padding: 2vw;
+  padding: 2vw 1.15vw;
   width: 100%;
   left: 0;
   top: 0;
