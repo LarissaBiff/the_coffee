@@ -10,7 +10,7 @@ function abrirCafes() {
 <template>
     <button @click="abrirCafes">
       <font-awesome-icon icon="fa-solid fa-mug-hot" style="font-size: 20px;" />
-      Ver Cafés
+      View Coffees
     </button>
 </template>
 

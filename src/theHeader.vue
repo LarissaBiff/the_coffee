@@ -7,11 +7,11 @@ import { RouterLink } from 'vue-router';
     <nav>
         <div class="menu">
             <h1>
-            <RouterLink to="/">
-                <font-awesome-icon icon="fa-solid fa-mug-hot" style="font-size: 22px; color: #FFF4E3;"/> 
-                The Coffee Quality Challenge
-            </RouterLink>
-        </h1>
+                <RouterLink to="/">
+                    <font-awesome-icon icon="fa-solid fa-mug-hot" style="font-size: 22px; color: #FFF4E3;"/> 
+                    The Coffee Quality Challenge
+                </RouterLink>
+            </h1>
 
         <div class="pages">
             <RouterLink to="/">HOME</RouterLink>
@@ -45,9 +45,9 @@ header {
     justify-content: center;
     gap: 2rem;
 }
-h1 a{
+h1 a {
     display: flex;
-    align-items: normal;
+    align-items: center;
     gap: 1.2vw;
     font-weight: bolder;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;

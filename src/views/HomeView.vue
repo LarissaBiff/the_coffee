@@ -10,6 +10,8 @@ import seeCoffees from '@/botoes/seeCoffees.vue';
     <section>
       <img src="/public/images/coffeeimg.png" alt="Coffee image">
       <img src="/public/images/coffeeimg.png" alt="Coffee image">
+      <h2>COFFEE QUALITY CHALLENGE</h2>
+      <h3>Sensory Evaluation Championship for Specialty Coffees</h3>
     </section>
     <section>
       <div class="thats_all">
@@ -19,6 +21,12 @@ import seeCoffees from '@/botoes/seeCoffees.vue';
     </div>
     <see-coffees/>
     </div>
+    </section>
+    <section>
+      <h3>About the Championship</h3>
+      <p>
+        This championship aims to promote the quality of our coffees through sensory evaluations based on the SCA methodology.
+      </p>
     </section>
   </main>
 </template>
@@ -39,5 +47,8 @@ import seeCoffees from '@/botoes/seeCoffees.vue';
 img{
   width: 50%;
   opacity: 85%;
+}
+h2, h3, p{
+  color: black;
 }
 </style>
