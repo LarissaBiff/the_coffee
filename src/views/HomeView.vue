@@ -48,7 +48,16 @@ img{
   width: 50%;
   opacity: 85%;
 }
-h2, h3, p{
-  color: black;
+h3, p{
+  color: #412d20;
+}
+h3{
+  color: #412d20;
+  font-size: 1.5vw;
+}
+h2{
+  color: #412d20;
+  font-weight: bolder;
+  font-size: 2.5vw;
 }
 </style>
