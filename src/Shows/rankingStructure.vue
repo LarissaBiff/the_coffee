@@ -1,6 +1,5 @@
 <script setup>
 import { cafes } from '@/data/coffes';
-
 </script>
 
 <template>
