@@ -16,7 +16,7 @@ function abrirCafes() {
 
 <style scoped>
 button{
-  background-color: rgb(104, 57, 38);
+  background-color: rgb(111, 78, 55);
   color: whitesmoke;
   border-radius: 5px;
   border: none;
