@@ -72,6 +72,7 @@ img{
 p{
   color: #412d20;
   padding: 1.15vw 0 0 0;
+  font-size: 20px;
 }
 h3{
   color: rgb(111, 78, 55);
