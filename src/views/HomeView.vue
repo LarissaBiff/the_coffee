@@ -11,7 +11,7 @@ import seeCoffees from '@/botoes/seeCoffees.vue';
     <see-coffees/>
   </main>
 </template>
-<style>
+<style scoped>
 main{
   display: flex;
   flex-direction: column;
