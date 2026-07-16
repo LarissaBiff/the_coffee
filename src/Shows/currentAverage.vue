@@ -13,11 +13,12 @@ div{
     color: #412d20;
     background-color: #fff8ed;
     border: solid rgb(111, 78, 55, 0.500) 2px;
-    padding: 1.2vw;
+    padding: 1.5vw 2vw;
     border-radius: 10px;
-    width: 200px;
+    width: 250px;
     display: flex;
     align-items: center;
+    justify-content: center;
     gap: 2vw;
 }
 p{

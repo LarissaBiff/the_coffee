@@ -2,15 +2,26 @@
 import { ref } from 'vue';
 import { cafes } from '@/data/coffes';
 
+defineProps({
+  modelValue: Number
+})
+
 const cf = ref('')
+
+const emit = defineEmits(['update:modelValue'])
 
 </script>
 
 <template>
     <div class="tp-cf">
         <label for="coffee_types">Coffee</label>
-        <select id="coffee_types" name="coffee_types" v-model="cf">
-            <option v-for="cafe in cafes" :key="cafe.id" :value="cafe.nome">
+        <select id="coffee_types" :value="modelValue"
+      @change="emit('update:modelValue', Number($event.target.value))">
+
+            <option
+                v-for="cafe in cafes"
+                :key="cafe.id"
+                :value="cafe.id">
                 {{ cafe.nome }}
             </option>
         </select>
@@ -20,6 +31,7 @@ const cf = ref('')
 <style scoped>
 .tp-cf{
     display:  grid;
+    width: fit-content;
 }
 label{
     color: #6F4E37;
@@ -33,7 +45,7 @@ select{
     border: rgb(111, 78, 55, 0.500) 2.5px solid;
     border-radius: 5px;
     padding: 8px 15px;
-    width: 100%;
+    width: 50vw;
     color: #6F4E37;
     font-size: 15px;
 }

@@ -1,23 +1,41 @@
 <script setup>
 import { ref } from 'vue';
 
-const numero = ref(1)
+defineProps({
+  label: String,
+  modelValue: Number
+})
 
-function limite(){
-    if(numero.value<0){
-        numero.value = 0;
-    } 
-    if(numero.value>10){
-        numero.value = 10
-    }
+const emit = defineEmits(['update:modelValue'])
+
+function limite(event) {
+  let valor = Number(event.target.value)
+
+  if (valor < 0) valor = 0
+  if (valor > 10) valor = 10
+
+  emit('update:modelValue', valor)
 }
 </script>
 
 <template>
-    <input type="number" v-model.number="numero" min="0" max="10" value="1" @input="limite">
+    <div class="a">
+        <label>{{ label }}</label>
+        <input type="number" :value="modelValue" @input="limite">
+    </div>
 </template>
 
 <style scoped>
+.a{
+    display: flex;
+    flex-direction: column;
+    width: fit-content;
+}
+label{
+    color: #6F4E37;
+    font-weight: bold;
+    font-size: 20px;
+}
 input{
     background-color: #fff8ed;
     border: rgb(111, 78, 55, 0.500) 2.5px solid;

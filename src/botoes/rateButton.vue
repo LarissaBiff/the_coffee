@@ -1,9 +1,19 @@
 <script setup>
 import { RouterLink } from 'vue-router';
+
+defineProps({
+  cafe: Object
+})
 </script>
 
 <template>
-<router-link class="button" to="/avaliar">Rate</router-link>
+  
+<RouterLink
+    class="button"
+    :to="{ name: 'avaliar-cafe', params: { id: cafe.id } }"
+  >
+    Rate
+  </RouterLink>
 
 </template>
 

@@ -3,7 +3,7 @@
 </script>
 
 <template>
-    <button href="#">
+    <button>
       <font-awesome-icon icon="fa-regular fa-floppy-disk" style="font-size: 20px;" />
       Salvar Avaliação
     </button>
@@ -11,18 +11,17 @@
 
 <style scoped>
 button{
-  background-color: rgb(104, 57, 38);
+  background-color: rgb(111, 78, 55);
   color: whitesmoke;
   border-radius: 5px;
   border: none;
-  padding-top: 10px;
-  padding-bottom: 10px;
+  padding: 10px 35px;
   font-size: 15px;
   display: flex;
   align-items: flex-end;
   justify-content: center;
   gap: 8px;
-  width: 100%;
+  width: fit-content;
   cursor: pointer;
   transition: transform 0.2s ease;
 }

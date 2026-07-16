@@ -12,7 +12,7 @@ import { cafes } from '@/data/coffes';
         <p>{{ cafe.nome }}</p>
       <p class="sub">Origin: {{ cafe.origem }}</p>
     </div>
-      <rate-button/>
+      <rate-button :cafe="cafe" />
     </div>
   </main>
 </template>

@@ -27,6 +27,11 @@ const router = createRouter({
       name: 'ranking',
       component: RankingView,
     },
+    {
+      path: '/avaliar/:id',
+      name: 'avaliar-cafe',
+      component: AvaliarView
+    }
   ],
 })
 
