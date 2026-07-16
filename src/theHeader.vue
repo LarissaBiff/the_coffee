@@ -1,5 +1,7 @@
 <script setup>
-import { RouterLink } from 'vue-router';
+import { RouterLink, useRoute } from 'vue-router';
+
+const route = useRoute()
 </script>
 
 <template>
@@ -16,7 +18,7 @@ import { RouterLink } from 'vue-router';
         <div class="pages">
             <RouterLink to="/">HOME</RouterLink>
             <RouterLink to="/cafes">COFFEES</RouterLink>
-            <RouterLink to="/avaliar">RATE</RouterLink>
+            <RouterLink to="/avaliar" :class="{ ativo: route.path.startsWith('/avaliar') }">RATE</RouterLink>
             <RouterLink to="/ranking">RANKING</RouterLink>
         </div>
         </div>
@@ -65,4 +67,12 @@ a{
         border-radius: 8px;
         background-color: #FFF4E3;
     }
+
+.ativo{
+    color: #6F4E37;
+    font-weight: bolder;
+    padding: 0.25rem 0.5rem;
+    border-radius: 8px;
+    background-color: #FFF4E3;
+}
 </style>
