@@ -45,7 +45,7 @@ import seeCoffees from '@/botoes/seeCoffees.vue';
   padding: 2rem 5rem;
   background-color: #fff8ed;
   margin: 0 auto;
-  margin-bottom: 2vw;
+  margin-bottom: 5vw;
 }
 .title{
   display: flex;
@@ -79,6 +79,7 @@ h3{
   font-size: 1.5vw;
 }
 h2{
+  margin: 5vw 0 0 0;
   color: #412d20;
   font-weight: bolder;
   font-size: 2.5vw;

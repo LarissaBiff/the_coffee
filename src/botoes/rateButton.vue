@@ -1,13 +1,14 @@
-<script setup></script>
+<script setup>
+import { RouterLink } from 'vue-router';
+</script>
 
 <template>
-    <button href="#">
-        Avaliar
-    </button>
+<router-link class="button" to="/avaliar">Rate</router-link>
+
 </template>
 
 <style scoped>
-button{
+.button{
   background-color: rgba(0, 0, 128, 0);
   border: 2.5px solid rgb(104, 57, 38);
   color: rgb(104, 57, 38);
@@ -17,10 +18,10 @@ button{
   cursor: pointer;
   transition: transform 0.2s ease;
 }
-button:hover{
+.button:hover{
   transform: scale(1.05);
 }
-button:active{
+.button:active{
   transform: scale(1.15);
 }
 </style>

@@ -1,29 +1,29 @@
 export const cafes = [
     {
         id: 1,
-        nome: 'Bourbon Amarelo',
-        origem: "Minas Gerais - BR",
+        nome: ' Arabica',
+        origem: "Ethiopia",
         avaliado: false,
         media: 8.7
     },
     {
         id: 2,
-        nome: 'Arara',
-        origem: "Espirito Santo - BR",
+        nome: 'Robusta',
+        origem: " Brazil",
         avaliado: false,
         media: 8.3
     },
     {
         id: 3,
-        nome: 'Catuaí',
-        origem: "Paraná - BR",
+        nome: 'Liberica',
+        origem: "Malaysia",
         avaliado: false,
         media: 7.9
     },
     {
         id: 4,
-        nome: 'Mundo Novo',
-        origem: "Bahia - BR",
+        nome: 'Excelsa',
+        origem: "Indonesia",
         avaliado: false,
         media: 7.2
     },
