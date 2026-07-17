@@ -19,10 +19,15 @@ function limite(event) {
 </script>
 
 <template>
+
     <div class="a">
+
         <label>{{ label }}</label>
-        <input type="number" :value="modelValue" @input="limite">
+        
+        <input type="number" :value="modelValue" @input="limite" min="0" max="10" step="0.5">
+
     </div>
+
 </template>
 
 <style scoped>

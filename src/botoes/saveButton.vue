@@ -1,11 +1,11 @@
 <script setup>
-
+const emit = defineEmits(['salvar'])
 </script>
 
 <template>
-    <button>
+    <button @click="emit('salvar')">
       <font-awesome-icon icon="fa-regular fa-floppy-disk" style="font-size: 20px;" />
-      Salvar Avaliação
+      Save the rating
     </button>
 </template>
 

@@ -17,25 +17,53 @@ const cafeSelecionado = ref(id ? Number(id) : null)
 const cafe = computed(() =>
   cafes.find(c => c.id === cafeSelecionado.value)
 )
+
+
+const media_usuario = computed(() => {
+  if (!cafe.value) return 0
+  const n = cafe.value.notas
+
+  return Number(((
+    n.aroma +
+    n.docura +
+    n.acidez +
+    n.corpo +
+    n.finalizacao
+  ) / 5).toFixed(1))
+})
+
+
+function salvarAvaliacao() {
+  cafe.value.minhaMedia = media_usuario.value
+
+  cafe.value.media = Number(
+    ((cafe.value.media + media_usuario.value) / 2).toFixed(1)
+  )
+
+  cafe.value.avaliado = true
+}
 </script>
 
 <template>
   <main>
     <h2>New rate:</h2>
     <div class="avalia">
+
       <coffee-type v-model="cafeSelecionado"/>
+
       <div v-if="cafe" class="notas">
+
         <a-grade label="Aroma" v-model="cafe.notas.aroma" />
         <a-grade label="Sweetness" v-model="cafe.notas.docura" />
         <a-grade label="Acidity" v-model="cafe.notas.acidez" />
         <a-grade label="Body" v-model="cafe.notas.corpo" />
         <a-grade label="Finish" v-model="cafe.notas.finalizacao" />
-        <current-average class="media"/>
-        <save-button class="salvar"/>
+
+        <current-average class="media" :media="media_usuario"/>
+
+        <save-button class="salvar" @salvar="salvarAvaliacao"/>
       </div>
-      
     </div>
-    
   </main>
 </template>
 

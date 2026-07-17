@@ -1,10 +1,15 @@
 <script setup>
-const total = 0;
+const props = defineProps({
+  media: {
+    type: Number,
+    default: 0
+  }
+})
 </script>
 
 <template>
     <div>
-        <p>Current Average</p> <p class="number">{{ total }}</p>
+        <p>Current Rating</p> <p class="number">{{ props.media }}</p>
     </div>
 </template>
 
