@@ -7,7 +7,9 @@ import currentAverage from '@/Shows/currentAverage.vue'
 
 import { ref, computed, reactive, watch } from 'vue'
 import { useRoute } from 'vue-router'
+import { useRouter } from 'vue-router'
 
+const router = useRouter()
 const route = useRoute()
 const id = route.params.id
 const cafeSelecionado = ref(id ? Number(id) : null)
@@ -56,6 +58,7 @@ const media_usuario = computed(() => {
   )
 
   cafe.value.avaliado = true
+  router.push({ name: 'ranking' })
 }
 </script>
 
