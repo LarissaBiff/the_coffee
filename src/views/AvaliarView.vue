@@ -5,35 +5,50 @@ import coffeeType from '@/inputs/coffeeType.vue'
 import saveButton from '@/botoes/saveButton.vue'
 import currentAverage from '@/Shows/currentAverage.vue'
 
-import { ref, computed } from 'vue'
+import { ref, computed, reactive, watch } from 'vue'
 import { useRoute } from 'vue-router'
 
 const route = useRoute()
-
 const id = route.params.id
-
 const cafeSelecionado = ref(id ? Number(id) : null)
 
 const cafe = computed(() =>
   cafes.find(c => c.id === cafeSelecionado.value)
 )
 
+const notasTemp = reactive({
+  aroma: 0,
+  docura: 0,
+  acidez: 0,
+  corpo: 0,
+  finalizacao: 0
+})
+
+watch(cafe, (novoCafe) => {
+  if (novoCafe) {
+    Object.assign(notasTemp, novoCafe.notas)
+  }
+}, { immediate: true })
 
 const media_usuario = computed(() => {
   if (!cafe.value) return 0
   const n = cafe.value.notas
 
   return Number(((
-    n.aroma +
-    n.docura +
-    n.acidez +
-    n.corpo +
-    n.finalizacao
+    notasTemp.aroma +
+    notasTemp.docura +
+    notasTemp.acidez +
+    notasTemp.corpo +
+    notasTemp.finalizacao
   ) / 5).toFixed(1))
 })
 
 
-function salvarAvaliacao() {
+  function salvarAvaliacao() {
+  if (!cafe.value) return
+
+  Object.assign(cafe.value.notas, notasTemp)
+
   cafe.value.minhaMedia = media_usuario.value
 
   cafe.value.media = Number(
@@ -53,11 +68,11 @@ function salvarAvaliacao() {
 
       <div v-if="cafe" class="notas">
 
-        <a-grade label="Aroma" v-model="cafe.notas.aroma" />
-        <a-grade label="Sweetness" v-model="cafe.notas.docura" />
-        <a-grade label="Acidity" v-model="cafe.notas.acidez" />
-        <a-grade label="Body" v-model="cafe.notas.corpo" />
-        <a-grade label="Finish" v-model="cafe.notas.finalizacao" />
+        <a-grade label="Aroma" v-model="notasTemp.aroma" />
+        <a-grade label="Sweetness" v-model="notasTemp.docura" />
+        <a-grade label="Acidity" v-model="notasTemp.acidez" />
+        <a-grade label="Body" v-model="notasTemp.corpo" />
+        <a-grade label="Finish" v-model="notasTemp.finalizacao" />
 
         <current-average class="media" :media="media_usuario"/>
 
