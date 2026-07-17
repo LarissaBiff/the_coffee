@@ -9,8 +9,7 @@ Desenvolver um site de avaliação de cafés, utilizando Vue.js, em que o usuár
 
 
 ### Cafés
-![página cafés](/public/images/screencapture-localhost-5173-avaliar-1-2026-07-16-23_37_02.png)
-
+![página cafés](/public/images/screencapture-localhost-5173-cafes-2026-07-16-23_35_14.png)
 Descrição
 ![página cafés](/public/images/Captura_de_tela_2026-07-16_233638.png)
 
