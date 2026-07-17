@@ -1,0 +1,129 @@
+<script setup>
+import { cafes } from '@/data/coffes'
+import aGrade from '@/inputs/aGrade.vue'
+import coffeeType from '@/inputs/coffeeType.vue'
+import saveButton from '@/botoes/saveButton.vue'
+import currentAverage from '@/Shows/currentAverage.vue'
+
+import { ref, computed, reactive, watch } from 'vue'
+import { useRoute } from 'vue-router'
+import { useRouter } from 'vue-router'
+
+const router = useRouter()
+const route = useRoute()
+const id = route.params.id
+const cafeSelecionado = ref(id ? Number(id) : null)
+
+const cafe = computed(() =>
+  cafes.find(c => c.id === cafeSelecionado.value)
+)
+
+const notasTemp = reactive({
+  aroma: 0,
+  docura: 0,
+  acidez: 0,
+  corpo: 0,
+  finalizacao: 0
+})
+
+watch(cafe, (novoCafe) => {
+  if (novoCafe) {
+    Object.assign(notasTemp, novoCafe.notas)
+  }
+}, { immediate: true })
+
+const media_usuario = computed(() => {
+  if (!cafe.value) return 0
+  const n = cafe.value.notas
+
+  return Number(((
+    notasTemp.aroma +
+    notasTemp.docura +
+    notasTemp.acidez +
+    notasTemp.corpo +
+    notasTemp.finalizacao
+  ) / 5).toFixed(1))
+})
+
+
+  function salvarAvaliacao() {
+  if (!cafe.value) return
+
+  Object.assign(cafe.value.notas, notasTemp)
+
+  cafe.value.minha_media = media_usuario.value
+
+  cafe.value.media = Number(
+    ((cafe.value.media + media_usuario.value) / 2).toFixed(1)
+  )
+
+  cafe.value.avaliado = true
+  router.push({ name: 'ranking' })
+}
+</script>
+
+<template>
+  <main>
+    <h2>New rate:</h2>
+    <div class="avalia">
+
+      <coffee-type v-model="cafeSelecionado"/>
+
+      <div v-if="cafe" class="notas">
+
+        <a-grade label="Aroma" v-model="notasTemp.aroma" />
+        <a-grade label="Sweetness" v-model="notasTemp.docura" />
+        <a-grade label="Acidity" v-model="notasTemp.acidez" />
+        <a-grade label="Body" v-model="notasTemp.corpo" />
+        <a-grade label="Finish" v-model="notasTemp.finalizacao" />
+
+        <current-average class="media" :media="media_usuario"/>
+
+        <save-button class="salvar" @salvar="salvarAvaliacao"/>
+      </div>
+    </div>
+  </main>
+</template>
+
+<style scoped>
+.notas{
+  display: flex;
+  flex-direction: column;
+}
+.media{
+  align-self: flex-start;
+  margin-top: 15px;
+}
+.salvar{
+  align-self: flex-end;
+  margin-top: 15px;
+}
+main{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 2vw;
+}
+
+h2{
+  color: #412d20;
+  font-weight: bolder;
+  font-size: 2.5vw;
+  margin: 5vw 5vw 0 5vw;
+}
+
+.avalia{
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+
+  padding: 2rem;
+
+  background-color: #fff8ed;
+  border: 3px solid #412d20;
+  border-radius: 10px;
+
+  box-sizing: border-box;
+  margin-top: 2vw;
+}
+</style>
