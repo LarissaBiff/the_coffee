@@ -1,6 +1,7 @@
 <script setup>
 import rateButton from '@/botoes/rateButton.vue';
 import { cafes } from '@/data/coffes';
+import seeMore from '@/botoes/seeMore.vue';
 </script>
 
 <template>
@@ -12,12 +13,19 @@ import { cafes } from '@/data/coffes';
         <p>{{ cafe.nome }}</p>
       <p class="sub">Origin: {{ cafe.origem }}</p>
     </div>
-      <rate-button :cafe="cafe" />
+      <div class="b">
+        <see-more :cafe="cafe"/>
+        <rate-button :cafe="cafe" />
+      </div>
     </div>
   </main>
 </template>
 
 <style scoped>
+.b{
+  display: flex;
+  gap: 15px;
+}
 h2{
   color: #412d20;
   font-weight: bolder;

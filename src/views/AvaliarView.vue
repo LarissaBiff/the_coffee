@@ -51,7 +51,7 @@ const media_usuario = computed(() => {
 
   Object.assign(cafe.value.notas, notasTemp)
 
-  cafe.value.minhaMedia = media_usuario.value
+  cafe.value.minha_media = media_usuario.value
 
   cafe.value.media = Number(
     ((cafe.value.media + media_usuario.value) / 2).toFixed(1)
