@@ -12,3 +12,6 @@ Desenvolver um site de avaliação de cafés, utilizando Vue.js, em que o usuár
 
 ### Avaliar
 ![página cafés](/public/images/screencapture-localhost-5173-avaliar-2026-07-16-22_13_49.png)
+
+### Ranking
+![página cafés](/public/images/screencapture-localhost-5173-ranking-2026-07-16-22_45_41.png)
