@@ -3,6 +3,7 @@
 ### Projeto do 2° trimestre de Dev Web II
 
 Aluna Larissa Biff, 2INFO3.
+
 Desenvolver um site de avaliação de cafés, utilizando Vue.js, em que o usuário possa visualizar os cafés participantes, registrar avaliações e consultar o ranking final.
 
 ### Home
