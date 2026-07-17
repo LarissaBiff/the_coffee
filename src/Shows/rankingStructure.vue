@@ -1,21 +1,41 @@
 <script setup>
 import { cafes } from '@/data/coffes';
+import { computed } from 'vue'
+
+const ranking = computed(() => {
+  return [...cafes]
+    .map(cafe => ({
+      ...cafe,
+      mediaFinal: cafe.minha_media !== null
+        ? Number(((cafe.media + cafe.minha_media) / 2).toFixed(1))
+        : cafe.media
+    }))
+    .sort((a, b) => b.mediaFinal - a.mediaFinal)
+})
 </script>
 
 <template>
     <ul>
-        <li v-for="cafe in cafes" :key="cafe.id">
+        <li v-for="(cafe, index) in ranking" :key="cafe.id">
 
             <div class="all">
+
+                    <span class="posicao">{{ index + 1 }}º</span>
+
                 <div class="blocoA">
-                <span class="nome">
-                    {{ cafe.nome }}
-                </span> 
+
+                    <span class="nome">
+                        {{ cafe.nome }}
+                    </span> 
+
                 <span class="origem">
                     {{ cafe.origem }}
                 </span>
+
             </div>
-             <span class="media">{{ cafe.media }}</span>
+
+             <span class="media">{{ cafe.mediaFinal }}</span>
+
             </div>
 
         </li>
@@ -23,10 +43,14 @@ import { cafes } from '@/data/coffes';
 </template>
 
 <style scoped>
+.posicao{
+    font-weight: bold;
+    color: #6F4E37;
+    font-size: 25px;
+}
 ul {
-    width: 100%;
-  list-style: none;
-  padding: 0;
+    list-style: none;
+    padding: 0;
 }
 li{
     width: 100%;
@@ -38,7 +62,6 @@ li{
     display: flex;
     gap: 8px;
     justify-content: space-between;
-    width: 100%;
 }
 
 .blocoA{
